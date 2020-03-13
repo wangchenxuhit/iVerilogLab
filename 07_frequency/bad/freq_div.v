@@ -2,7 +2,7 @@
 `timescale 1ns/100ps
 
 module freq_div (
-                 reset_n,
+  reset_n,
                  clockin,
                  datain,
                  clockout
