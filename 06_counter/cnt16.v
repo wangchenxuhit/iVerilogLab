@@ -1,3 +1,4 @@
+
 module cnt16 ( 
   clk, 
   rst_n, 
@@ -8,17 +9,16 @@ module cnt16 (
   output  [3:0]  cnt;
   
   reg     [3:0]  cnt;
-  always @( posedge clk or negedge rst_n )  begin 
+  always @( posedge clk or negedge rst_n ) begin 
     if ( ~rst_n ) begin
-      cnt    <= 4¡¯b0000;         
+      cnt    <= 4'b0000;          
     end
     else if ( &cnt ) begin
-      cnt    <= 4¡¯b0000;
+      cnt    <= 4'b0000;
     end
     else begin
-      cnt    <=  cnt + 4¡¯b0001;         
+      cnt    <=  cnt + 4'b0001;         
     end
   end
 
 endmodule
-
