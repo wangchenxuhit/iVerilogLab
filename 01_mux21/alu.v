@@ -12,3 +12,4 @@ module alu(op1,op2,opcode,y);
     endcase
   end
 endmodule
+
