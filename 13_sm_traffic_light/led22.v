@@ -1,12 +1,12 @@
 
 module traffic (
-  clk50M,
+  clk100M,
   rst_n,
   led1,
   led2
 );
 
-  input clk,rst_n;
+  input clk100M,rst_n;
   output[2:0] led1,led2;
   reg[2:0] led1,led2;
   reg[4:0] time_left;
@@ -18,7 +18,7 @@ module traffic (
                  s4=2'b11; 
   
   freqdiv dut(
-  .clk100M(clk),
+  .clk100M(clk100M),
   .clr(rst_n),
   .clk1(clk1h)  
   );
@@ -36,7 +36,7 @@ module traffic (
             time_left<=5'd2;
             state<=s2;
             led1<=3'b100;
-            led2<=3'b001;
+            led2<=3'b010;
           end
           else
             time_left<=time_left-1;
@@ -45,8 +45,8 @@ module traffic (
           if(time_left==0)begin
             time_left<=5'd28;
             state<=s3;
-            led1<=3'b100;
-            led2<=3'b010;
+            led1<=3'b001;
+            led2<=3'b100;
           end
           else
             time_left<=time_left-1;
@@ -55,7 +55,7 @@ module traffic (
           if(time_left==0)begin
             time_left<=5'd2;
             state<=s4;
-            led1<=3'b001;
+            led1<=3'b010;
             led2<=3'b100;
           end
           else
@@ -65,8 +65,8 @@ module traffic (
           if(time_left==0)begin
             time_left<=5'd18;
             state<=s1;
-            led1<=3'b010;
-            led2<=3'b100;
+            led1<=3'b100;
+            led2<=3'b001;
           end
           else
             time_left<=time_left-1;
@@ -80,4 +80,3 @@ endmodule
       
   
   
-

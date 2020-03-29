@@ -1,6 +1,10 @@
+`timescale 1ns/100ps
+
 module cnt16_tb ();
   reg   tb_clk;
   reg   tb_rst_n;
+
+  wire [3:0] tb_cnt;
 
   cnt16 dut (
     .clk  ( tb_clk  ), 
@@ -18,7 +22,7 @@ module cnt16_tb ();
     tb_rst_n = 1'b1;
     #11 tb_rst_n = 1'b0;
     #25 tb_rst_n = 1'b1;
-    #100 $finish;
+    #400 $finish;
   end
 
 endmodule

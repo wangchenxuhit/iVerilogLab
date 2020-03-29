@@ -1,4 +1,3 @@
-
 `timescale 1ns/100ps
 
 module freq_div_led8_pipe_tb ();
@@ -19,7 +18,7 @@ module freq_div_led8_pipe_tb ();
    always @( negedge diode[7] ) begin 
       if ( datain == 8'h10 ) begin
          $display("Simulation Completed OK!!!");
-         $stop;
+         $finish;
       end
    end
 
@@ -38,7 +37,7 @@ module freq_div_led8_pipe_tb ();
       reset_n = 1'b1;
       @(negedge clock) begin
          reset_n = 1'b0;
-         datain  = 8'h05;
+         datain  = 8'h05;       //Attention:Here is 10 frequency division instead of 5 frequency division
       end
       repeat(4) begin
          @(negedge clock);
@@ -47,7 +46,7 @@ module freq_div_led8_pipe_tb ();
       repeat(4000) begin
          @(negedge clock);
       end
-      datain  = 8'h10;
+      datain  = 8'h10;          //Attention:Here is 32 frequency division instead of 16 frequency division
    end
 
 endmodule

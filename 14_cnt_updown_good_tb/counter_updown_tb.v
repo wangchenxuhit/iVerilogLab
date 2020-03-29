@@ -15,19 +15,11 @@
 module counter_updown_tb();
   reg              clock;
   reg              reset_n;
-  reg              load;
   reg              up_down;
   reg              count_en;
-  reg  [7:0]       data_in;
 
   wire [7:0]       actual_count8;
   wire             actual_carry;
-
-  integer          test_part;       // which part of the test are we doing?
-  reg  [7:0]       cycle_count;     // cycle count variable
-
-  reg  [7:0]       expected_count8; // used to compare against the counter
-  reg              expected_carry;  // used to compare against the carry
 
    //
    // INSTANTIATE THE COUNTER

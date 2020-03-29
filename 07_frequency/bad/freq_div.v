@@ -1,8 +1,14 @@
 
 `timescale 1ns/100ps
 
+/*
+**While datain = 5, this file will achieve 10 frequency division
+*/
+
+`timescale 1ns/100ps
+
 module freq_div (
-  reset_n,
+                 reset_n,
                  clockin,
                  datain,
                  clockout
@@ -22,7 +28,9 @@ module freq_div (
          counter <= 8'h00; 
       end
       else if ( ~|counter ) begin
-         counter <= datain; 
+         //Attention:You should subtract one from datain, otherwise it will become 2*(datain + 1) frequency division
+         //Not counter <= datain;
+         counter <= datain - 8'h01;        
       end
       else begin
          counter <= counter - 8'h01;
