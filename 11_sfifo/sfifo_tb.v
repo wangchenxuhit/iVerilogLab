@@ -1,5 +1,5 @@
-// include, please change the path of sfifo_def.v
-`include "F:/Wang_code/iVerilogLab/11_sfifo/sfifo_def.v"
+// include
+`include "sfifo_def.v"
 
 module sfifo_tb();
 

@@ -1,9 +1,14 @@
 module freqdiv(clk100M,clr,clk1);
-  input clr,clk100M;
-  output clk1;
-  reg clk1;
-  reg[26:0] count;
-  parameter all=99999999,half=49999999;
+
+  input       clr;
+  input       clk100M;
+  output      clk1;
+
+  reg         clk1;
+  reg  [26:0] count;
+
+  parameter all  = 99999999,
+            half = 49999999;
   
   always@(posedge clk100M)begin
     if(!clr)begin

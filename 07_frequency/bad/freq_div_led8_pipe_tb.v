@@ -2,51 +2,51 @@
 
 module freq_div_led8_pipe_tb ();
 
-   reg                reset_n;
-   reg                clock;
-   reg    [7:0]       datain;
+  reg                reset_n;
+  reg                clock;
+  reg    [7:0]       datain;
 
-   wire   [7:0]       diode;
+  wire   [7:0]       diode;
 
-   freq_div_led8_pipe dut (
-      .reset_n(reset_n),
-      .clock(clock),
-      .datain(datain),
-      .diode(diode)
-   );
+  freq_div_led8_pipe dut (
+    .reset_n ( reset_n ),
+    .clock   ( clock   ),
+    .datain  ( datain  ),
+    .diode   ( diode   )
+  );
 
-   always @( negedge diode[7] ) begin 
-      if ( datain == 8'h10 ) begin
-         $display("Simulation Completed OK!!!");
-         $finish;
-      end
-   end
+  always @( negedge diode[7] ) begin 
+    if ( datain == 8'h10 ) begin
+       $display("Simulation Completed OK!!!");
+       $finish;
+    end
+  end
 
-   initial begin
-      $dumpfile("dump.fsdb");
-      $dumpvars();
-   end
+  initial begin
+    $dumpfile("dump.fsdb");
+    $dumpvars();
+  end
 
-   initial begin
-      clock = 1'b0;
-   end
+  initial begin
+    clock = 1'b0;
+  end
 
-   always #10 clock = ~clock;
+  always #10 clock = ~clock;
 
-   initial begin
-      reset_n = 1'b1;
-      @(negedge clock) begin
-         reset_n = 1'b0;
-         datain  = 8'h05;       //Attention:Here is 10 frequency division instead of 5 frequency division
-      end
-      repeat(4) begin
-         @(negedge clock);
-      end
-      reset_n = 1'b1;
-      repeat(4000) begin
-         @(negedge clock);
-      end
-      datain  = 8'h10;          //Attention:Here is 32 frequency division instead of 16 frequency division
-   end
+  initial begin
+    reset_n = 1'b1;
+    @(negedge clock) begin
+       reset_n = 1'b0;
+       datain  = 8'h05;       //Attention:Here is 10 frequency division instead of 5 frequency division
+    end
+    repeat(4) begin
+       @(negedge clock);
+    end
+    reset_n = 1'b1;
+    repeat(4000) begin
+       @(negedge clock);
+    end
+    datain  = 8'h10;          //Attention:Here is 32 frequency division instead of 16 frequency division
+  end
 
 endmodule

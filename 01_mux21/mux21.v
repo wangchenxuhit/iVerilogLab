@@ -10,25 +10,25 @@ module mux21 (
   sel
 );
 
-input               a;
-input               b;
-input               sel;
-output              out;
+  input               a;
+  input               b;
+  input               sel;
+  output              out;
 
 
 
-//
-// MUX21 output
-//
-reg                 out;
-always @( sel or a or b )  begin 
-  if ( !sel ) begin
-    out = a;
+  //
+  // MUX21 output
+  //
+  reg                 out;
+  always @( sel or a or b )  begin 
+    if ( !sel ) begin
+      out = a;
+    end
+    else begin
+      out = b;
+    end
   end
-  else begin
-    out = b;
-  end
-end
 
 endmodule
 

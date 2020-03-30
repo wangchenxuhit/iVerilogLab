@@ -18,19 +18,19 @@ module shiftreg4 (
   reg            q3;
 
   always @( posedge clk ) begin
-     if ( rst ) begin
-        q3 <= 1'b0;
-        q2 <= 1'b0;
-        q1 <= 1'b0;
-        q0 <= 1'b0;
-     end
-     else begin
-        q3 <= q2;
-        q2 <= q1;
-        q1 <= q0;
-        q0 <= din;
-        // { q3, q2, q1, q0 } <=  { q2, q1, q0, din };
-     end
+    if ( rst ) begin
+       q3 <= 1'b0;
+       q2 <= 1'b0;
+       q1 <= 1'b0;
+       q0 <= 1'b0;
+    end
+    else begin
+       q3 <= q2;
+       q2 <= q1;
+       q1 <= q0;
+       q0 <= din;
+       // { q3, q2, q1, q0 } <=  { q2, q1, q0, din };
+    end
   end
 
   assign dout = q3;

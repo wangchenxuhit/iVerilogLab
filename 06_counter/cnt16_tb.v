@@ -1,8 +1,8 @@
 `timescale 1ns/100ps
 
 module cnt16_tb ();
-  reg   tb_clk;
-  reg   tb_rst_n;
+  reg        tb_clk;
+  reg        tb_rst_n;
 
   wire [3:0] tb_cnt;
 

@@ -24,12 +24,12 @@ module counter_updown_tb();
    //
    // INSTANTIATE THE COUNTER
    counter_updown dut (
-     .clk       (clock),
-     .reset_n   (reset_n),
-     .up_down   (up_down),
-     .count_en  (count_en),
-     .count8    (actual_count8),
-     .carry     (actual_carry)
+     .clk      ( clock         ),
+     .reset_n  ( reset_n       ),
+     .up_down  ( up_down       ),
+     .count_en ( count_en      ),
+     .count8   ( actual_count8 ),
+     .carry    ( actual_carry  )
    );
 
    initial begin

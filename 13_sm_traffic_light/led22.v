@@ -6,12 +6,20 @@ module traffic (
   led2
 );
 
-  input clk100M,rst_n;
-  output[2:0] led1,led2;
-  reg[2:0] led1,led2;
-  reg[4:0] time_left;
-  reg[1:0] state;
-  wire clk1h;
+  input        clk100M;
+  input        rst_n;
+
+  output [2:0] led1;
+  output [2:0] led2;
+
+  reg    [2:0] led1;
+  reg    [2:0] led2;
+
+  reg    [4:0] time_left;
+  reg    [1:0] state;
+  
+  wire         clk1h;
+
   parameter[1:0] s1=2'b00,
                  s2=2'b01,
                  s3=2'b10,

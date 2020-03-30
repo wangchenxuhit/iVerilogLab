@@ -57,14 +57,14 @@ module counter_updown_tb();
    // MAIN CODE
    // INSTANTIATE THE COUNTER
    counter_updown dut (
-      .clk       (clock),
-      .in        (data_in),
-      .reset_n   (reset_n),
-      .load      (load),
-      .up_down   (up_down),
-      .count_en  (count_en),
-      .count8    (actual_count8),
-      .carry     (actual_carry)
+      .clk       ( clock         ),
+      .in        ( data_in       ),
+      .reset_n   ( reset_n       ),
+      .load      ( load          ),
+      .up_down   ( up_down       ),
+      .count_en  ( count_en      ),
+      .count8    ( actual_count8 ),
+      .carry     ( actual_carry  )
    );
 
    initial begin

@@ -26,32 +26,32 @@ module s74194 (
     end
     else begin
       case ( mode )
-         2'b00 : begin                 // data hold
-            pout <= pout;
-         end
-         2'b01 : begin                 // left shift
-            pout[0] <= sin;
-            pout[1] <= pout[0];
-            pout[2] <= pout[1];
-            pout[3] <= pout[2];
-            pout[4] <= pout[3];
-            pout[5] <= pout[4];
-            pout[6] <= pout[5];
-            pout[7] <= pout[6];
-         end 
-         2'b10 : begin                 // right shift
-            pout[7] <= sin;
-            pout[0] <= pout[1];
-            pout[1] <= pout[2];
-            pout[2] <= pout[3];
-            pout[3] <= pout[4];
-            pout[4] <= pout[5];
-            pout[5] <= pout[6];
-            pout[6] <= pout[7];
-         end
-         2'b11 : begin                 // paralell load
-            pout <= pin;
-         end
+        2'b00 : begin                 // data hold
+           pout <= pout;
+        end
+        2'b01 : begin                 // left shift
+           pout[0] <= sin;
+           pout[1] <= pout[0];
+           pout[2] <= pout[1];
+           pout[3] <= pout[2];
+           pout[4] <= pout[3];
+           pout[5] <= pout[4];
+           pout[6] <= pout[5];
+           pout[7] <= pout[6];
+        end 
+        2'b10 : begin                 // right shift
+           pout[7] <= sin;
+           pout[0] <= pout[1];
+           pout[1] <= pout[2];
+           pout[2] <= pout[3];
+           pout[3] <= pout[4];
+           pout[4] <= pout[5];
+           pout[5] <= pout[6];
+           pout[6] <= pout[7];
+        end
+        2'b11 : begin                 // paralell load
+           pout <= pin;
+        end
       endcase    
     end    
   end
