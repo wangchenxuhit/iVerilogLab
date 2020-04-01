@@ -1,13 +1,13 @@
 `timescale 1ns/100ps
 
-module half_adder_tb();
+module half_adder_behav_tb();
 
   reg     t_a;
   reg     t_b;
   wire    t_sum;
   wire    t_cout;
 
-  half_adder dut ( 
+  half_adder_behav dut ( 
     .a    ( t_a    ), 
     .b    ( t_b    ), 
     .sum  ( t_sum  ), 

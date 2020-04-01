@@ -1,4 +1,4 @@
-module half_adder (
+module half_adder_behav (
   a,
   b,
   sum,

@@ -29,6 +29,8 @@ module led4_pipe_tb();
     t_reset_n = 0;
     #20;
     t_reset_n = 1;
+    #80;
+    $finish;
   end
 
 endmodule

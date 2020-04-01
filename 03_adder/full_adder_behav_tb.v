@@ -1,6 +1,6 @@
 `timescale 1ns/100ps
 
-module full_adder_tb();
+module full_adder_behav_tb();
 
   reg     t_a;
   reg     t_b; 
@@ -8,7 +8,7 @@ module full_adder_tb();
   wire    t_sum;
   wire    t_cout;
 
-  full_adder dut ( 
+  full_adder_behav dut ( 
     .a    ( t_a    ), 
     .b    ( t_b    ), 
     .cin  ( t_cin  ), 

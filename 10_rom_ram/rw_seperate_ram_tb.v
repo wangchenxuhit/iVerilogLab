@@ -4,7 +4,7 @@
 
 `timescale 1ns/100ps
 
-module synchro_ram_tb();
+module rw_seperate_ram_tb();
 
   reg           t_clk;
   reg     [3:0] t_datain;
@@ -13,7 +13,7 @@ module synchro_ram_tb();
   reg           t_write;
   wire    [3:0] t_dataout;  
 
-  synchro_ram  dut ( 
+  rw_seperate_ram  dut ( 
     .clk     ( t_clk     ), 
     .datain  ( t_datain  ), 
     .addr    ( t_addr    ), 

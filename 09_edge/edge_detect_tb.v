@@ -1,5 +1,5 @@
 //
-//Edge detection testbench file
+//Edge detect testbench file
 //
 
 `timescale 1ns/100ps

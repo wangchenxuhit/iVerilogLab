@@ -1,4 +1,4 @@
-module full_adder (
+module full_adder_behav (
   a,
   b,
   cin,

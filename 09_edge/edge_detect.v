@@ -1,5 +1,5 @@
 //
-//Edge detection
+//Edge detect
 //
 
 module edge_detect (

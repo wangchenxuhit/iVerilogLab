@@ -4,14 +4,14 @@
 
 `timescale 1ns/100ps
 
-module shiftreg4_tb();
+module shiftreg4_behav_tb();
 
   reg     t_clk;
   reg     t_rst;
   reg     t_din;
   wire    t_dout;  
 
-  shiftreg4  dut ( 
+  shiftreg4_behav  dut ( 
     .clk  ( t_clk  ), 
     .rst  ( t_rst  ), 
     .din  ( t_din  ), 

@@ -1,4 +1,4 @@
-module shiftreg4 (
+module shiftreg4_behav (
   clk,
   rst,
   din,
