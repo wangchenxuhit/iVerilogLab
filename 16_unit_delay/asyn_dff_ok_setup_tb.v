@@ -4,7 +4,7 @@
 
 `timescale 1ns/100ps
 
-module asyn_dff_err_setup_tb();
+module asyn_dff_ok_setup_tb();
 
   reg     t_clk;
   reg     t_rst;
@@ -12,7 +12,7 @@ module asyn_dff_err_setup_tb();
   wire    t_asyn_q;  
 
   // Asynchronous DFF
-  asyn_dff_err_setup  dut ( 
+  asyn_dff_ok_setup  dut ( 
     .clk ( t_clk    ), 
     .rst ( t_rst    ), 
     .d   ( t_d      ), 
@@ -42,14 +42,22 @@ module asyn_dff_err_setup_tb();
   // Control signal
   //
   initial begin
-             t_d = 1; 
-    #20      t_d = 0; 
-    #40      t_d = 1;         
-    #30      t_d = 0;      
-    #30      t_d = 1;    
-    #30      t_d = 0;    
-    #30      t_d = 1; 
-    #30     $finish;
+    t_d = 1; 
+    @(posedge t_clk) #1;
+    t_d = 0; 
+    @(posedge t_clk) #1;
+    t_d = 1; 
+    @(posedge t_clk) #1;
+    t_d = 0; 
+    @(posedge t_clk) #1;
+    t_d = 1; 
+    @(posedge t_clk) #1;
+    t_d = 0; 
+    @(posedge t_clk) #1;
+    t_d = 1; 
+    @(posedge t_clk) #1;
+    $finish;
   end
 
 endmodule
+
