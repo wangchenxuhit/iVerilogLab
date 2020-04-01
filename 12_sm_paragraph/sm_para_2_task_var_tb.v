@@ -6,13 +6,13 @@
 
 module sm_para_2_task_var_tb();
 
-  reg     t_clk；
-  reg     t_nrst；
-  reg     t_i1；
+  reg     t_clk;
+  reg     t_nrst;
+  reg     t_i1;
   reg     t_i2;
-  wire    t_o1；
-  wire    t_o2；
-  wire    t_err;  
+  wire    t_o1;
+  wire    t_o2;
+  wire    t_err; 
 
   // sm_para_2_task_var
   sm_para_2_task_var dut ( 

@@ -6,7 +6,7 @@
 
 module sync_tb();
 
-  reg     t_clk；
+  reg     t_clk;
   reg     t_d;
   wire    t_dout;  
 

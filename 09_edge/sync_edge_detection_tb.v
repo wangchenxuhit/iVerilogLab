@@ -5,8 +5,8 @@
 
 module sync_edge_detect_tb();
 
-  reg     t_clk；
-  reg     t_rst_n；
+  reg     t_clk;
+  reg     t_rst_n;
   reg     t_d;
   wire    t_flag;  
 
