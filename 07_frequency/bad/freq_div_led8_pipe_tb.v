@@ -23,7 +23,7 @@ module freq_div_led8_pipe_tb ();
   end
 
   initial begin
-    $dumpfile("dump.fsdb");
+    $dumpfile("dump.vcd");
     $dumpvars();
   end
 
