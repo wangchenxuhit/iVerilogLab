@@ -13,4 +13,3 @@ module alu(op1,op2,opcode,y);
   end
 endmodule
 
-
